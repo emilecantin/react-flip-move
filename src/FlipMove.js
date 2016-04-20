@@ -394,7 +394,7 @@ class FlipMove extends Component {
 
   getPositionDelta(domNode, key) {
     const newBox  = domNode.getBoundingClientRect();
-    const oldBox  = this.boundingBoxes[key];
+    const oldBox  = this.boundingBoxes[key] || {left: 0, top: 0};
     const relativeBox = {
       top:  newBox.top - this.parentBox.top,
       left: newBox.left - this.parentBox.left
